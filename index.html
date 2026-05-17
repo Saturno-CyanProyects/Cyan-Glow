@@ -311,21 +311,25 @@
 
     .floating-card {
       position: absolute;
-      width: min(66%, 330px);
-      border-radius: 28px;
+      width: min(60%, 300px);
+      border-radius: 24px;
       background: rgba(255, 255, 255, 0.78);
       border: 1px solid rgba(215, 238, 240, 0.95);
-      box-shadow: 0 22px 50px rgba(7, 63, 74, 0.13);
-      padding: 14px;
+      box-shadow: 0 18px 42px rgba(7, 63, 74, 0.12);
+      padding: 12px;
       backdrop-filter: blur(18px);
       animation: float 6.5s ease-in-out infinite;
+    }
+
+    .float-one {
+      animation: none;
     }
 
     .floating-card img {
       width: 100%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
-      border-radius: 22px;
+      border-radius: 20px;
       background: var(--fondo-secundario);
     }
 
@@ -337,7 +341,24 @@
       line-height: 1.25;
     }
 
-    .floating-card span {
+    .featured-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 28px;
+      padding: 0 11px;
+      margin: 0 0 10px 4px;
+      border-radius: 999px;
+      background: rgba(228, 248, 250, 0.92);
+      border: 1px solid rgba(215, 238, 240, 0.95);
+      color: var(--texto-boton-secundario);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .floating-card .floating-price {
       display: block;
       margin: 0 6px 4px;
       color: var(--costo);
@@ -349,11 +370,15 @@
       top: 44px;
     }
 
-    .float-two {
-      right: 30px;
-      bottom: 42px;
-      width: min(58%, 290px);
-      animation-delay: -2.6s;
+    .float-one {
+      left: 50%;
+      top: 50%;
+      width: min(64%, 310px);
+      transform: translate(-50%, -50%);
+    }
+
+    .float-one:hover {
+      transform: translate(-50%, calc(-50% - 6px));
     }
 
     .glow-bubble {
@@ -1003,9 +1028,14 @@
 
     @media (max-width: 820px) {
       .nav {
-        align-items: flex-start;
+        align-items: center;
         flex-direction: column;
         border-radius: 28px;
+      }
+
+      .brand {
+        align-self: center;
+        justify-content: center;
       }
 
       .topbar {
@@ -1014,12 +1044,33 @@
 
       .nav-links {
         width: 100%;
-        overflow-x: auto;
+        overflow: visible;
         padding-bottom: 2px;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px 12px;
+      }
+
+      .nav-links li:last-child {
+        width: 100%;
+        display: flex;
+      }
+
+      .nav-links li:last-child a {
+        width: 100%;
       }
 
       .hero {
         padding-top: 54px;
+      }
+
+      .hero-brand-logo {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero-actions {
+        justify-content: center;
       }
 
       .hero-visual {
@@ -1069,23 +1120,25 @@
         min-height: 430px;
       }
 
+      .hero-brand-logo {
+        margin-bottom: 26px;
+      }
+
       .hero-brand-logo img {
         width: min(320px, 84vw);
       }
-
 
       .floating-card {
         width: 72%;
       }
 
       .float-one {
-        left: 14px;
-        top: 24px;
-      }
-
-      .float-two {
-        right: 14px;
-        bottom: 28px;
+        left: 50%;
+        right: auto;
+        top: 50%;
+        margin: 0;
+        width: min(76%, 300px);
+        transform: translate(-50%, -50%);
       }
 
       .stats,
@@ -1120,7 +1173,7 @@
         <li>
           <a
             class="nav-whatsapp"
-            href="https://wa.me/593984066882?text=Hola%2C%20quiero%20recibir%20una%20asesor%C3%ADa%20gratuita%20de%20CYAN%20GLOW%20para%20empezar%20a%20cuidar%20y%20consentir%20a%20mi%20piel." data-whatsapp-advice
+            href="https://wa.me/593969869981?text=Hola%2C%20quiero%20recibir%20una%20asesor%C3%ADa%20gratuita%20de%20CYAN%20GLOW%20para%20empezar%20a%20cuidar%20y%20consentir%20a%20mi%20piel." data-whatsapp-advice
             target="_blank"
             rel="noopener noreferrer"
           >Asesoría gratuita</a>
@@ -1137,22 +1190,19 @@
         </figure>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#productos">Ver catálogo</a>
-          <a class="btn btn-secondary" href="https://wa.me/593984066882?text=Hola%2C%20quiero%20recibir%20una%20asesor%C3%ADa%20gratuita%20de%20CYAN%20GLOW%20para%20empezar%20a%20cuidar%20y%20consentir%20a%20mi%20piel." data-whatsapp-advice target="_blank" rel="noopener noreferrer">Recibe asesoría gratuita</a>
+          <a class="btn btn-secondary" href="https://wa.me/593969869981?text=Hola%2C%20quiero%20recibir%20una%20asesor%C3%ADa%20gratuita%20de%20CYAN%20GLOW%20para%20empezar%20a%20cuidar%20y%20consentir%20a%20mi%20piel." data-whatsapp-advice target="_blank" rel="noopener noreferrer">Recibe asesoría gratuita</a>
         </div>
       </div>
 
       <div class="hero-visual" aria-label="Productos destacados de CYAN GLOW">
         <div class="glow-bubble" aria-hidden="true"></div>
         <article class="floating-card float-one">
+          <div class="featured-chip">Producto estrella</div>
           <img src="./PROTECTOR%20SOLAR%20SKIN1004%20HYALU%20CICA.png" alt="Protector solar SKIN1004 Hyalu Cica" />
-          <strong>SKIN1004 Hyalu Cica</strong>
-          <span>$23.00</span>
+          <strong>Protector Solar SKIN1004 Hyalu Cica</strong>
+          <span class="floating-price">$23.00</span>
         </article>
-        <article class="floating-card float-two">
-          <img src="./SERUM%20NINELESS%2010%25%20NIACINAMIDE.png" alt="Serum Nineless 10% Niacinamide" />
-          <strong>Nineless Niacinamide</strong>
-          <span>$18.00</span>
-        </article>
+
       </div>
     </section>
 
@@ -1177,8 +1227,8 @@
               <span>Con stock</span>
             </div>
             <div class="stat">
-              <strong>SPF</strong>
-              <span>Favoritos</span>
+              <strong id="favoriteProducts">1</strong>
+              <span>Favorito</span>
             </div>
           </div>
         </div>
@@ -1387,7 +1437,7 @@
         <p>
           Te ayudamos a elegir los productos correctos según tu tipo de piel y tus objetivos.
         </p>
-        <a class="btn btn-primary" href="https://wa.me/593984066882?text=Hola%2C%20quiero%20recibir%20una%20asesor%C3%ADa%20gratuita%20de%20CYAN%20GLOW%20para%20empezar%20a%20cuidar%20y%20consentir%20a%20mi%20piel." data-whatsapp-advice target="_blank" rel="noopener noreferrer">Quiero mi asesoría gratuita</a>
+        <a class="btn btn-primary" href="https://wa.me/593969869981?text=Hola%2C%20quiero%20recibir%20una%20asesor%C3%ADa%20gratuita%20de%20CYAN%20GLOW%20para%20empezar%20a%20cuidar%20y%20consentir%20a%20mi%20piel." data-whatsapp-advice target="_blank" rel="noopener noreferrer">Quiero mi asesoría gratuita</a>
       </div>
     </section>
   </main>
@@ -1402,7 +1452,7 @@
     const SHEET_CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(SHEET_NAME)}`;
     const SHEET_JSONP_BASE_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?sheet=${encodeURIComponent(SHEET_NAME)}&tq=${encodeURIComponent("select *")}`;
     const IMAGE_BASE = "./";
-    const WHATSAPP_NUMBER = "593984066882";
+    const WHATSAPP_NUMBER = "593969869981";
     const GENERAL_ADVICE_MESSAGE = "Hola, quiero recibir una asesoría gratuita de CYAN GLOW para empezar a cuidar y consentir a mi piel.";
 
     const fallbackProducts = [
@@ -1460,6 +1510,7 @@
         stock: "1",
         price: 23,
         image: "PROTECTOR SOLAR SKIN1004 HYALU CICA.png",
+        favorite: true,
         description: "Protector solar acuoso con sensación de sérum: hidrata, calma y deja un acabado de piel saludable. Perfecto para quienes buscan SPF alto, ligero y cómodo para todos los días."
       },
       {
@@ -1554,6 +1605,7 @@
     const categorySelect = document.getElementById("categorySelect");
     const totalProducts = document.getElementById("totalProducts");
     const availableProducts = document.getElementById("availableProducts");
+    const favoriteProducts = document.getElementById("favoriteProducts");
     const sheetStatus = document.getElementById("sheetStatus");
 
     const fallbackSvg = "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Crect width='600' height='600' fill='%23FFF8EF'/%3E%3Ccircle cx='300' cy='260' r='118' fill='%23BFEFEA' opacity='0.75'/%3E%3Ctext x='300' y='325' text-anchor='middle' font-family='Arial' font-size='34' fill='%23073F4A' font-weight='700'%3ECYAN GLOW%3C/text%3E%3Ctext x='300' y='370' text-anchor='middle' font-family='Arial' font-size='18' fill='%23667A7D'%3EImagen no encontrada%3C/text%3E%3C/svg%3E";
@@ -1780,6 +1832,8 @@
     function updateStats() {
       totalProducts.textContent = products.length;
       availableProducts.textContent = products.filter((product) => Number(product.stock) > 0).length;
+      const favoritesCount = products.filter((product) => product.favorite === true || normalizeText(product.name).includes("skin1004 hyalu cica")).length;
+      if (favoriteProducts) favoriteProducts.textContent = favoritesCount || 1;
     }
 
     function renderProducts() {
