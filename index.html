@@ -1,0 +1,1979 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CYAN GLOW | Korean Skincare</title>
+  <meta name="description" content="Catálogo minimalista de skincare coreano CYAN GLOW." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --fondo-principal: #FAEEDD;
+      --fondo-secundario: #FFF8EF;
+      --fondo-tarjetas: #FFFFFF;
+      --titulos: #073F4A;
+      --subtitulos: #009FB5;
+      --descripcion: #667A7D;
+      --costo: #008EA3;
+      --precio-descuento: #E98A7B;
+      --boton-principal: #00BFD8;
+      --texto-boton: #FFFFFF;
+      --boton-secundario: #E4F8FA;
+      --texto-boton-secundario: #007C8C;
+      --bordes: #D7EEF0;
+      --detalles-suaves: #BFEFEA;
+      --acento-glow: #8FF3E8;
+      --sombra-suave: 0 24px 70px rgba(7, 63, 74, 0.10);
+      --sombra-card: 0 18px 45px rgba(7, 63, 74, 0.08);
+      --radio-xl: 32px;
+      --radio-lg: 24px;
+      --radio-md: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(143, 243, 232, 0.42), transparent 32rem),
+        radial-gradient(circle at 82% 12%, rgba(233, 138, 123, 0.18), transparent 28rem),
+        var(--fondo-principal);
+      color: var(--descripcion);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .page-shell {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 16px;
+      z-index: 20;
+      margin-top: 16px;
+      border: 1px solid rgba(215, 238, 240, 0.88);
+      background: rgba(255, 248, 239, 0.78);
+      backdrop-filter: blur(20px);
+      border-radius: 999px;
+      box-shadow: 0 18px 50px rgba(7, 63, 74, 0.07);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 12px 16px 12px 22px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--titulos);
+      line-height: 0.9;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 30% 28%, #FFFFFF 0 18%, transparent 19%),
+        linear-gradient(135deg, var(--boton-principal), var(--acento-glow));
+      box-shadow: 0 0 0 8px rgba(143, 243, 232, 0.22), 0 0 28px rgba(143, 243, 232, 0.42);
+    }
+
+    .brand-logo-text {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.08em;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.8rem, 3.4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.065em;
+      text-transform: none;
+    }
+
+    .brand-logo-cyan {
+      color: var(--titulos);
+    }
+
+    .brand-logo-glow {
+      color: var(--subtitulos);
+      text-shadow: 0 0 24px rgba(143, 243, 232, 0.78);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .nav-links a,
+    .pill-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 16px;
+      border-radius: 999px;
+      color: var(--texto-boton-secundario);
+      font-size: 0.9rem;
+      font-weight: 700;
+      transition: 0.22s ease;
+    }
+
+    .nav-links a:hover,
+    .pill-link:hover {
+      background: var(--boton-secundario);
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(340px, 0.98fr);
+      align-items: center;
+      gap: 38px;
+      padding: 82px 0 64px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--subtitulos);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 44px;
+      height: 1px;
+      background: var(--subtitulos);
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: var(--titulos);
+      line-height: 1.02;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3.6rem, 8vw, 7.4rem);
+      letter-spacing: -0.06em;
+      margin-bottom: 22px;
+    }
+
+
+    .hero-brand-logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+
+    .hero-brand-logo img {
+      width: clamp(280px, 40vw, 460px);
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 0 24px rgba(143, 243, 232, 0.42));
+    }
+
+    .hero-title-accent {
+      color: var(--subtitulos);
+      text-shadow: 0 0 32px rgba(143, 243, 232, 0.82);
+    }
+
+    .hero-text {
+      max-width: 620px;
+      font-size: clamp(1.02rem, 1.8vw, 1.2rem);
+      line-height: 1.8;
+      color: var(--descripcion);
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 22px;
+      border: 0;
+      border-radius: 999px;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 800;
+      transition: 0.22s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      color: var(--texto-boton);
+      background: linear-gradient(135deg, var(--boton-principal), var(--subtitulos));
+      box-shadow: 0 14px 28px rgba(0, 191, 216, 0.26);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(0, 191, 216, 0.34);
+    }
+
+    .btn-secondary {
+      color: var(--texto-boton-secundario);
+      background: var(--boton-secundario);
+      border: 1px solid var(--bordes);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      background: #d7f6f8;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 540px;
+      border-radius: var(--radio-xl);
+      background:
+        linear-gradient(140deg, rgba(255, 255, 255, 0.68), rgba(255, 248, 239, 0.42)),
+        radial-gradient(circle at center, rgba(143, 243, 232, 0.46), transparent 19rem);
+      border: 1px solid rgba(215, 238, 240, 0.95);
+      box-shadow: var(--sombra-suave);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      width: 330px;
+      height: 330px;
+      right: -90px;
+      top: -90px;
+      border-radius: 50%;
+      background: rgba(143, 243, 232, 0.42);
+      filter: blur(4px);
+      z-index: -1;
+    }
+
+    .hero-visual::after {
+      content: "K-BEAUTY";
+      position: absolute;
+      left: -36px;
+      bottom: 26px;
+      color: rgba(7, 63, 74, 0.055);
+      font-size: clamp(3.8rem, 8vw, 6.5rem);
+      font-weight: 900;
+      letter-spacing: -0.07em;
+      z-index: -1;
+    }
+
+    .floating-card {
+      position: absolute;
+      width: min(66%, 330px);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(215, 238, 240, 0.95);
+      box-shadow: 0 22px 50px rgba(7, 63, 74, 0.13);
+      padding: 14px;
+      backdrop-filter: blur(18px);
+      animation: float 6.5s ease-in-out infinite;
+    }
+
+    .floating-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 22px;
+      background: var(--fondo-secundario);
+    }
+
+    .floating-card strong {
+      display: block;
+      margin: 12px 6px 2px;
+      color: var(--titulos);
+      font-size: 0.95rem;
+      line-height: 1.25;
+    }
+
+    .floating-card span {
+      display: block;
+      margin: 0 6px 4px;
+      color: var(--costo);
+      font-weight: 800;
+    }
+
+    .float-one {
+      left: 34px;
+      top: 44px;
+    }
+
+    .float-two {
+      right: 30px;
+      bottom: 42px;
+      width: min(58%, 290px);
+      animation-delay: -2.6s;
+    }
+
+    .glow-bubble {
+      position: absolute;
+      right: 36px;
+      top: 54px;
+      width: 118px;
+      height: 118px;
+      border-radius: 999px;
+      background: rgba(143, 243, 232, 0.48);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: inset 0 0 22px rgba(255,255,255,0.7), 0 0 40px rgba(143, 243, 232, 0.55);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(-1deg); }
+      50% { transform: translateY(-14px) rotate(1deg); }
+    }
+
+    .section {
+      padding: 70px 0;
+    }
+
+    .section-soft {
+      background: rgba(255, 248, 239, 0.72);
+      border-block: 1px solid rgba(215, 238, 240, 0.72);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      max-width: 680px;
+    }
+
+    .section-title h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.1rem, 5vw, 4rem);
+      letter-spacing: -0.045em;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      line-height: 1.75;
+      font-size: 1rem;
+      color: var(--descripcion);
+    }
+
+    .section-title.section-title-wide {
+      max-width: 960px;
+    }
+
+    .section-title.section-title-wide p {
+      max-width: 860px;
+      text-wrap: balance;
+    }
+
+    .routine-section-title {
+      max-width: 900px;
+    }
+
+    .routine-section-title h2 {
+      max-width: 900px;
+      text-wrap: balance;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      min-width: 360px;
+    }
+
+    .stat {
+      border: 1px solid var(--bordes);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.72);
+      padding: 18px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(7, 63, 74, 0.05);
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--titulos);
+      font-size: 1.7rem;
+      line-height: 1;
+    }
+
+    .stat span {
+      display: block;
+      color: var(--subtitulos);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+
+    .filters {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 26px;
+      padding: 12px;
+      border: 1px solid rgba(215, 238, 240, 0.95);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: 0 14px 40px rgba(7, 63, 74, 0.05);
+    }
+
+    .search-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      min-width: 180px;
+      padding: 0 14px;
+    }
+
+    .search-wrap svg {
+      flex: 0 0 auto;
+      color: var(--subtitulos);
+    }
+
+    .search-wrap input {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--titulos);
+      font: inherit;
+      min-height: 42px;
+    }
+
+    .search-wrap input::placeholder {
+      color: rgba(102, 122, 125, 0.72);
+    }
+
+    .category-select {
+      border: 1px solid var(--bordes);
+      outline: 0;
+      border-radius: 999px;
+      background: var(--boton-secundario);
+      color: var(--texto-boton-secundario);
+      min-height: 42px;
+      padding: 0 14px;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      min-height: 100%;
+      border-radius: var(--radio-lg);
+      background: var(--fondo-tarjetas);
+      border: 1px solid var(--bordes);
+      overflow: hidden;
+      box-shadow: var(--sombra-card);
+      transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--detalles-suaves);
+      box-shadow: 0 24px 64px rgba(7, 63, 74, 0.14);
+    }
+
+    .product-image-wrap {
+      position: relative;
+      padding: 14px 14px 0;
+      background:
+        radial-gradient(circle at 28% 20%, rgba(143, 243, 232, 0.28), transparent 9rem),
+        linear-gradient(180deg, var(--fondo-secundario), rgba(255, 248, 239, 0.4));
+    }
+
+    .product-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 20px;
+      background: var(--fondo-principal);
+      border: 1px solid rgba(215, 238, 240, 0.72);
+    }
+
+    .badge {
+      position: absolute;
+      left: 24px;
+      top: 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 28px;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(215, 238, 240, 0.92);
+      color: var(--subtitulos);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      backdrop-filter: blur(12px);
+    }
+
+    .card-content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 18px;
+    }
+
+    .product-category {
+      color: var(--subtitulos);
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .product-name {
+      color: var(--titulos);
+      font-size: 1.02rem;
+      line-height: 1.28;
+      margin-bottom: 10px;
+    }
+
+    .product-description {
+      color: var(--descripcion);
+      font-size: 0.9rem;
+      line-height: 1.62;
+      margin-bottom: 16px;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid rgba(215, 238, 240, 0.78);
+    }
+
+    .price-box strong {
+      display: block;
+      color: var(--costo);
+      font-size: 1.28rem;
+    }
+
+    .price-box span {
+      color: var(--descripcion);
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
+    .stock-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      color: var(--precio-descuento);
+      background: rgba(233, 138, 123, 0.13);
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+
+    .routine-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .routine-panel {
+      border: 1px solid var(--bordes);
+      border-radius: var(--radio-xl);
+      background: rgba(255, 255, 255, 0.76);
+      padding: clamp(22px, 3vw, 32px);
+      box-shadow: var(--sombra-card);
+    }
+
+    .routine-panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 22px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(215, 238, 240, 0.9);
+    }
+
+    .routine-panel h3 {
+      font-size: clamp(1.4rem, 2vw, 1.8rem);
+      margin-bottom: 6px;
+    }
+
+    .routine-panel-header p {
+      line-height: 1.6;
+      font-size: 0.94rem;
+    }
+
+    .routine-tag {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      padding: 0 14px;
+      border-radius: 999px;
+      color: var(--texto-boton-secundario);
+      background: var(--boton-secundario);
+      border: 1px solid var(--bordes);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .routine-list {
+      display: grid;
+      gap: 14px;
+      list-style: none;
+    }
+
+    .routine-step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 14px;
+      padding: 16px;
+      border-radius: 22px;
+      background: rgba(255, 248, 239, 0.7);
+      border: 1px solid rgba(215, 238, 240, 0.82);
+    }
+
+    .routine-number {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--texto-boton);
+      background: linear-gradient(135deg, var(--boton-principal), var(--subtitulos));
+      font-weight: 900;
+      box-shadow: 0 12px 24px rgba(0, 191, 216, 0.18);
+    }
+
+    .routine-step h4 {
+      color: var(--titulos);
+      font-size: 1.02rem;
+      margin-bottom: 6px;
+    }
+
+    .routine-step p {
+      line-height: 1.65;
+      font-size: 0.92rem;
+    }
+
+    .routine-step strong {
+      color: var(--titulos);
+      font-weight: 800;
+    }
+
+    .routine-examples {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .routine-examples span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 10px;
+      border-radius: 999px;
+      color: var(--texto-boton-secundario);
+      background: rgba(228, 248, 250, 0.72);
+      border: 1px solid rgba(215, 238, 240, 0.9);
+      font-size: 0.76rem;
+      font-weight: 800;
+    }
+
+    .routine-summary {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    .summary-card {
+      border: 1px solid var(--bordes);
+      border-radius: var(--radio-lg);
+      background: rgba(255, 255, 255, 0.82);
+      padding: 24px;
+      box-shadow: var(--sombra-card);
+    }
+
+    .summary-card h3 {
+      font-size: 1.26rem;
+      margin-bottom: 12px;
+    }
+
+    .summary-order {
+      display: grid;
+      gap: 10px;
+      color: var(--descripcion);
+      line-height: 1.6;
+    }
+
+    .summary-order strong {
+      color: var(--subtitulos);
+    }
+
+    .starter-products {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .starter-products li {
+      position: relative;
+      padding-left: 22px;
+      color: var(--descripcion);
+      font-weight: 700;
+    }
+
+    .starter-products li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--boton-principal);
+      box-shadow: 0 0 0 5px rgba(143, 243, 232, 0.22);
+    }
+
+    .cta {
+      margin: 74px 0 88px;
+      border: 1px solid rgba(215, 238, 240, 0.95);
+      border-radius: var(--radio-xl);
+      background:
+        radial-gradient(circle at 85% 15%, rgba(143, 243, 232, 0.42), transparent 20rem),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.84), rgba(255, 248, 239, 0.72));
+      box-shadow: var(--sombra-suave);
+      padding: clamp(34px, 6vw, 62px);
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.2rem, 5vw, 4.4rem);
+      letter-spacing: -0.05em;
+      margin-bottom: 14px;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0 auto 26px;
+      line-height: 1.75;
+    }
+
+    .footer {
+      padding: 32px 0 46px;
+      color: var(--descripcion);
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    .empty-state {
+      grid-column: 1 / -1;
+      padding: 46px;
+      text-align: center;
+      border: 1px dashed var(--bordes);
+      border-radius: var(--radio-lg);
+      background: rgba(255, 255, 255, 0.64);
+      color: var(--descripcion);
+    }
+
+
+
+    .sheet-status {
+      display: none;
+      margin: -10px 0 22px;
+      padding: 12px 16px;
+      border-radius: 18px;
+      border: 1px solid var(--bordes);
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--descripcion);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      box-shadow: 0 10px 28px rgba(7, 63, 74, 0.04);
+    }
+
+    body.admin-mode .sheet-status {
+      display: block;
+    }
+
+    .sheet-status.success {
+      color: var(--texto-boton-secundario);
+      background: rgba(228, 248, 250, 0.86);
+    }
+
+    .sheet-status.warning {
+      color: #9A5A00;
+      background: rgba(255, 243, 212, 0.9);
+      border-color: rgba(236, 190, 103, 0.64);
+    }
+
+    .sheet-status.error {
+      color: #9A3E35;
+      background: rgba(233, 138, 123, 0.13);
+      border-color: rgba(233, 138, 123, 0.38);
+    }
+
+    .nav-whatsapp {
+      color: var(--texto-boton) !important;
+      background: linear-gradient(135deg, var(--boton-principal), var(--subtitulos));
+      box-shadow: 0 10px 24px rgba(0, 191, 216, 0.22);
+    }
+
+    .nav-whatsapp:hover {
+      background: linear-gradient(135deg, var(--subtitulos), var(--boton-principal)) !important;
+      color: var(--texto-boton) !important;
+    }
+
+    .product-description {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-footer {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .product-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .product-whatsapp {
+      width: 100%;
+      min-height: 44px;
+      font-size: 0.88rem;
+      box-shadow: 0 12px 24px rgba(0, 191, 216, 0.18);
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .trust-card {
+      min-height: 100%;
+      border: 1px solid var(--bordes);
+      border-radius: var(--radio-lg);
+      background: rgba(255, 255, 255, 0.78);
+      padding: 24px;
+      box-shadow: var(--sombra-card);
+    }
+
+    .trust-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      border-radius: 50%;
+      color: var(--texto-boton);
+      background: linear-gradient(135deg, var(--boton-principal), var(--subtitulos));
+      font-weight: 900;
+      box-shadow: 0 12px 26px rgba(0, 191, 216, 0.2);
+    }
+
+    .trust-card h3 {
+      font-size: 1.08rem;
+      margin-bottom: 10px;
+    }
+
+    .trust-card p {
+      color: var(--descripcion);
+      line-height: 1.65;
+      font-size: 0.92rem;
+    }
+
+    .routine-warning {
+      border-color: rgba(233, 138, 123, 0.42);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .routine-warning p {
+      line-height: 1.7;
+    }
+
+    @media (max-width: 1080px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 520px;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .trust-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .section-head {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .stats {
+        min-width: 0;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        border-radius: 28px;
+      }
+
+      .topbar {
+        border-radius: 30px;
+      }
+
+      .nav-links {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+
+      .hero-visual {
+        min-height: 470px;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .routine-layout,
+      .routine-summary {
+        grid-template-columns: 1fr;
+      }
+
+      .filters {
+        align-items: stretch;
+        flex-direction: column;
+        border-radius: 28px;
+      }
+
+      .category-select {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .brand-logo-text {
+        font-size: clamp(1.65rem, 11vw, 2.2rem);
+      }
+
+      .section-title h2 {
+        font-size: clamp(2.25rem, 12vw, 3.2rem);
+        line-height: 1.04;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+      }
+
+      .page-shell {
+        width: min(100% - 24px, 1180px);
+      }
+
+      .hero-visual {
+        min-height: 430px;
+      }
+
+      .hero-brand-logo img {
+        width: min(320px, 84vw);
+      }
+
+
+      .floating-card {
+        width: 72%;
+      }
+
+      .float-one {
+        left: 14px;
+        top: 24px;
+      }
+
+      .float-two {
+        right: 14px;
+        bottom: 28px;
+      }
+
+      .stats,
+      .product-grid,
+      .trust-grid,
+      .routine-layout,
+      .routine-summary {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 54px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar page-shell">
+    <nav class="nav" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="Cyan Glow inicio">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-logo-text" aria-hidden="true">
+          <span class="brand-logo-cyan">Cyan</span>
+          <span class="brand-logo-glow">Glow</span>
+        </span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#rutina">Rutina</a></li>
+        <li><a href="#confianza">Confianza</a></li>
+        <li>
+          <a
+            class="nav-whatsapp"
+            href="https://wa.me/593984066882?text=Hola%2C%20quiero%20recibir%20una%20asesor%C3%ADa%20gratuita%20de%20CYAN%20GLOW%20para%20empezar%20a%20cuidar%20y%20consentir%20a%20mi%20piel." data-whatsapp-advice
+            target="_blank"
+            rel="noopener noreferrer"
+          >Asesoría gratuita</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="hero page-shell">
+      <div>
+        <figure class="hero-brand-logo" aria-label="Cyan Glow">
+          <img src="./LOGO%20CYAN%20GLOW.png" alt="Cyan Glow" />
+        </figure>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#productos">Ver catálogo</a>
+          <a class="btn btn-secondary" href="https://wa.me/593984066882?text=Hola%2C%20quiero%20recibir%20una%20asesor%C3%ADa%20gratuita%20de%20CYAN%20GLOW%20para%20empezar%20a%20cuidar%20y%20consentir%20a%20mi%20piel." data-whatsapp-advice target="_blank" rel="noopener noreferrer">Recibe asesoría gratuita</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="Productos destacados de CYAN GLOW">
+        <div class="glow-bubble" aria-hidden="true"></div>
+        <article class="floating-card float-one">
+          <img src="./PROTECTOR%20SOLAR%20SKIN1004%20HYALU%20CICA.png" alt="Protector solar SKIN1004 Hyalu Cica" />
+          <strong>SKIN1004 Hyalu Cica</strong>
+          <span>$23.00</span>
+        </article>
+        <article class="floating-card float-two">
+          <img src="./SERUM%20NINELESS%2010%25%20NIACINAMIDE.png" alt="Serum Nineless 10% Niacinamide" />
+          <strong>Nineless Niacinamide</strong>
+          <span>$18.00</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="productos">
+      <div class="page-shell">
+        <div class="section-head">
+          <div class="section-title">
+            <span class="eyebrow">Catálogo</span>
+            <h2>Glow coreano.</h2>
+            <p>
+              Explora protectores solares, limpiadores, tónicos, sérums y tratamientos seleccionados para una rutina minimalista y efectiva.
+            </p>
+          </div>
+
+          <div class="stats" aria-label="Resumen del catálogo">
+            <div class="stat">
+              <strong id="totalProducts">17</strong>
+              <span>Productos</span>
+            </div>
+            <div class="stat">
+              <strong id="availableProducts">17</strong>
+              <span>Con stock</span>
+            </div>
+            <div class="stat">
+              <strong>SPF</strong>
+              <span>Favoritos</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="filters" aria-label="Filtros de productos">
+          <label class="search-wrap" for="searchInput">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M10.8 18.6a7.8 7.8 0 1 1 0-15.6 7.8 7.8 0 0 1 0 15.6Z" stroke="currentColor" stroke-width="2" />
+              <path d="m16.7 16.7 4.3 4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            <input id="searchInput" type="search" placeholder="Buscar producto, marca o activo..." autocomplete="off" />
+          </label>
+
+          <select class="category-select" id="categorySelect" aria-label="Filtrar por categoría">
+            <option value="Todos">Todos</option>
+            <option value="Protector solar">Protectores solares</option>
+            <option value="Limpiador">Limpiadores</option>
+            <option value="Sérum">Sérums y ampollas</option>
+            <option value="Tónico">Tónicos</option>
+            <option value="Contorno de ojos">Contorno de ojos</option>
+            <option value="Mascarilla">Mascarillas</option>
+            <option value="Crema hidratante">Cremas</option>
+          </select>
+        </div>
+
+        <div class="sheet-status" id="sheetStatus">
+          Conectando con Google Sheets...
+        </div>
+
+        <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section" id="confianza">
+      <div class="page-shell">
+        <div class="section-head">
+          <div class="section-title section-title-wide">
+            <span class="eyebrow">Compra con confianza</span>
+            <h2>Te acompañamos antes de elegir.</h2>
+            <p>
+              No se trata de comprar más productos, sino de escoger los correctos para tu piel, tu rutina y tus objetivos.
+            </p>
+          </div>
+        </div>
+
+        <div class="trust-grid" aria-label="Razones para comprar en CYAN GLOW">
+          <article class="trust-card">
+            <span class="trust-icon" aria-hidden="true">01</span>
+            <h3>Asesoría gratuita</h3>
+            <p>Te ayudamos a elegir según tu tipo de piel, necesidad principal y nivel de experiencia con skincare.</p>
+          </article>
+
+          <article class="trust-card">
+            <span class="trust-icon" aria-hidden="true">02</span>
+            <h3>Productos originales</h3>
+            <p>Selección cuidada de marcas coreanas reconocidas y favoritos de rutina diaria.</p>
+          </article>
+
+          <article class="trust-card">
+            <span class="trust-icon" aria-hidden="true">03</span>
+            <h3>Rutinas simples</h3>
+            <p>Opciones fáciles de seguir para empezar con limpieza, hidratación, tratamiento y protector solar.</p>
+          </article>
+
+          <article class="trust-card">
+            <span class="trust-icon" aria-hidden="true">04</span>
+            <h3>Stock limitado</h3>
+            <p>Trabajamos con unidades disponibles para que puedas consultar y separar tu producto favorito.</p>
+          </article>
+
+          <article class="trust-card">
+            <span class="trust-icon" aria-hidden="true">05</span>
+            <h3>Envíos seguros a todo Ecuador</h3>
+            <p>Realizamos envíos seguros a nivel nacional para que recibas tus productos CYAN GLOW con confianza, estés donde estés.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="rutina">
+      <div class="page-shell">
+        <div class="section-head">
+          <div class="section-title routine-section-title">
+            <span class="eyebrow">Rutina simple</span>
+            <h2>Rutina fácil para&nbsp;empezar.</h2>
+            <p>
+              Una guía corta para usar tus productos en el orden correcto, sin complicarte.
+            </p>
+          </div>
+        </div>
+
+        <div class="routine-layout">
+          <article class="routine-panel">
+            <div class="routine-panel-header">
+              <div>
+                <h3>Rutina de día</h3>
+                <p>Enfocada en preparar, hidratar y proteger la piel.</p>
+              </div>
+              <span class="routine-tag">Mañana</span>
+            </div>
+
+            <ol class="routine-list">
+              <li class="routine-step">
+                <span class="routine-number">01</span>
+                <div>
+                  <h4>Limpieza</h4>
+                  <p>Lava el rostro con un limpiador facial suave durante 30–60 segundos.</p>
+                </div>
+              </li>
+
+              <li class="routine-step">
+                <span class="routine-number">02</span>
+                <div>
+                  <h4>Tónico o esencia</h4>
+                  <p>Paso opcional para hidratar, calmar o preparar la piel.</p>
+                </div>
+              </li>
+
+              <li class="routine-step">
+                <span class="routine-number">03</span>
+                <div>
+                  <h4>Sérum</h4>
+                  <p>Elige según tu necesidad: luminosidad, manchas, poros, grasa o hidratación.</p>
+                </div>
+              </li>
+
+              <li class="routine-step">
+                <span class="routine-number">04</span>
+                <div>
+                  <h4>Hidratante</h4>
+                  <p>Sella la hidratación y mantiene la barrera de la piel saludable.</p>
+                </div>
+              </li>
+
+              <li class="routine-step">
+                <span class="routine-number">05</span>
+                <div>
+                  <h4>Protector solar</h4>
+                  <p>El paso más importante de la mañana. Aplica en rostro y cuello.</p>
+                </div>
+              </li>
+            </ol>
+          </article>
+
+          <article class="routine-panel">
+            <div class="routine-panel-header">
+              <div>
+                <h3>Rutina de noche</h3>
+                <p>Enfocada en limpiar, tratar y reparar mientras duermes.</p>
+              </div>
+              <span class="routine-tag">Noche</span>
+            </div>
+
+            <ol class="routine-list">
+              <li class="routine-step">
+                <span class="routine-number">01</span>
+                <div>
+                  <h4>Limpieza</h4>
+                  <p>Retira protector solar, maquillaje, grasa y suciedad del día.</p>
+                </div>
+              </li>
+
+              <li class="routine-step">
+                <span class="routine-number">02</span>
+                <div>
+                  <h4>Tratamiento</h4>
+                  <p>Usa activos como retinol, glicólico, salicílico o antimanchas según tu piel.</p>
+                </div>
+              </li>
+
+              <li class="routine-step">
+                <span class="routine-number">03</span>
+                <div>
+                  <h4>Hidratante</h4>
+                  <p>Ayuda a reparar la piel y reduce resequedad o irritación.</p>
+                </div>
+              </li>
+            </ol>
+
+            <div class="summary-card" style="margin-top: 18px;">
+              <h3>Básicos para empezar</h3>
+              <ul class="starter-products">
+                <li>Limpiador facial</li>
+                <li>Hidratante</li>
+                <li>Protector solar</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="routine-summary">
+          <article class="summary-card routine-warning">
+            <h3>Nota importante</h3>
+            <p>
+              Si usas ácidos, retinal, salicílico o exfoliantes, introdúcelos poco a poco, evita combinarlos todos la misma noche y usa protector solar todos los días. Si tu piel se irrita, pausa el activo y vuelve a lo básico: limpieza suave, hidratante y SPF.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-shell" id="contacto">
+      <div class="cta">
+        <span class="eyebrow">CYAN GLOW</span>
+        <h2>El ritual coreano para una piel luminosa y saludable</h2>
+        <p>
+          Te ayudamos a elegir los productos correctos según tu tipo de piel y tus objetivos.
+        </p>
+        <a class="btn btn-primary" href="https://wa.me/593984066882?text=Hola%2C%20quiero%20recibir%20una%20asesor%C3%ADa%20gratuita%20de%20CYAN%20GLOW%20para%20empezar%20a%20cuidar%20y%20consentir%20a%20mi%20piel." data-whatsapp-advice target="_blank" rel="noopener noreferrer">Quiero mi asesoría gratuita</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer page-shell">
+    © <span id="year"></span> CYAN GLOW. Korean skincare boutique.
+  </footer>
+
+  <script>
+    const SHEET_ID = "1qrBQ6_53Bk4sgGGwvl9RURwU06OD54fi97biuie_-3U";
+    const SHEET_NAME = "Productos";
+    const SHEET_CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(SHEET_NAME)}`;
+    const SHEET_JSONP_BASE_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?sheet=${encodeURIComponent(SHEET_NAME)}&tq=${encodeURIComponent("select *")}`;
+    const IMAGE_BASE = "./";
+    const WHATSAPP_NUMBER = "593984066882";
+    const GENERAL_ADVICE_MESSAGE = "Hola, quiero recibir una asesoría gratuita de CYAN GLOW para empezar a cuidar y consentir a mi piel.";
+
+    const fallbackProducts = [
+      {
+        name: "PROTECTOR SOLAR TOCOBO CICA CALMING",
+        category: "Protector solar",
+        stock: "2",
+        price: 20,
+        image: "PROTECTOR SOLAR TOCOBO CICA CALMING.png",
+        description: "Protección solar diaria con sensación de sérum: ligera, fresca y cómoda. Ideal para piel sensible o mixta, porque ayuda a calmar e hidratar mientras deja un acabado natural, sin pesadez ni efecto grasoso."
+      },
+      {
+        name: "PROTECTOR SOLAR MINI STICK TOCOBO CICA CALMING",
+        category: "Protector solar",
+        stock: "1",
+        price: 10,
+        image: "PROTECTOR SOLAR MINI STICK TOCOBO CICA CALMING.png",
+        description: "Tu protector solar de cartera: práctico para reaplicar durante el día sin ensuciar las manos. Su formato stick es perfecto para llevarlo contigo y mantener la piel protegida con una sensación fresca y cómoda."
+      },
+      {
+        name: "CONTORNO DE OJOS HARU HARU WONDER",
+        category: "Contorno de ojos",
+        stock: "1",
+        price: 15,
+        image: "CONTORNO DE OJOS HARU HARU WONDER.png",
+        description: "Un contorno de ojos ligero para una mirada más descansada y suave. Combina cuidado hidratante con bakuchiol para ayudar a mejorar la apariencia de líneas finas sin sensación pesada."
+      },
+      {
+        name: "MASCARILLA LEMON NIACINAMIDE GLOW",
+        category: "Mascarilla",
+        stock: "1",
+        price: 22,
+        image: "MASCARILLA LEMON NIACINAMIDE GLOW.png",
+        description: "Mascarilla glow para piel opaca: ayuda a limpiar impurezas, suavizar textura y devolver luminosidad. Perfecta para una rutina de spa en casa cuando quieres que la piel se vea más fresca y radiante."
+      },
+      {
+        name: "PROTECTOR SOLAR BEAUTY OF JOSEON",
+        category: "Protector solar",
+        stock: "2",
+        price: 21,
+        image: "PROTECTOR SOLAR BEAUTY OF JOSEON.png",
+        description: "El protector coreano favorito para uso diario: textura cremosa, ligera e hidratante que se absorbe rápido y deja un glow natural. Ideal para quienes quieren alta protección sin capa blanca ni sensación pesada."
+      },
+      {
+        name: "RETINAL CONTORNO DE OJOS BEAUTY OF JOSEON",
+        category: "Contorno de ojos",
+        stock: "1",
+        price: 21,
+        image: "RETINAL CONTORNO DE OJOS BEAUTY OF JOSEON.png",
+        description: "Sérum de ojos con ginseng y retinal para una mirada más firme, luminosa y descansada. Una opción ideal para quienes quieren tratar signos de edad de forma elegante dentro de la rutina diaria."
+      },
+      {
+        name: "PROTECTOR SOLAR SKIN1004 HYALU CICA",
+        category: "Protector solar",
+        stock: "1",
+        price: 23,
+        image: "PROTECTOR SOLAR SKIN1004 HYALU CICA.png",
+        description: "Protector solar acuoso con sensación de sérum: hidrata, calma y deja un acabado de piel saludable. Perfecto para quienes buscan SPF alto, ligero y cómodo para todos los días."
+      },
+      {
+        name: "PROTECTOR MISSHA SOFT MILK",
+        category: "Protector solar",
+        stock: "1",
+        price: 21,
+        image: "PROTECTOR MISSHA SOFT MILK.png",
+        description: "Leche solar ligera con acabado suave y más controlado, ideal para piel mixta o grasa. Protege, se siente fresca y deja la piel lista para el maquillaje sin brillo excesivo."
+      },
+      {
+        name: "LIMPIADOR PURITO PANTHENOL",
+        category: "Limpiador",
+        stock: "2",
+        price: 19,
+        image: "LIMPIADOR PURITO PANTHENOL.png",
+        description: "Limpieza suave para cuidar la barrera cutánea. Su fórmula con pantenol y bambú limpia sin dejar tirantez, ideal para piel sensible o para quienes buscan una limpieza cómoda mañana y noche."
+      },
+      {
+        name: "ACIDO GLICOLICO THE ORDINARY",
+        category: "Tónico",
+        stock: "1",
+        price: 23.5,
+        image: "ACIDO GLICOLICO THE ORDINARY.png",
+        description: "Tónico exfoliante para renovar la textura y revelar una piel más luminosa y uniforme. Perfecto para rutinas nocturnas enfocadas en suavidad, glow y tono más parejo."
+      },
+      {
+        name: "CREMA MEDICUBE HYALURONIC",
+        category: "Crema hidratante",
+        stock: "5",
+        price: 23,
+        image: "CREMA MEDICUBE HYALURONIC.png",
+        description: "Crema gel fresca y jugosa para piel que necesita hidratación y comodidad. Su textura ligera con ácido hialurónico y ceramidas deja la piel más suave, elástica y con aspecto saludable."
+      },
+      {
+        name: "SERUM APLB SALICYLIC ACID",
+        category: "Sérum",
+        stock: "1",
+        price: 16,
+        image: "SERUM APLB SALICYLIC ACID.png",
+        description: "Sérum ideal para piel con poros, textura e imperfecciones. Ayuda a equilibrar la piel, aportar frescura y mejorar el aspecto general sin sensación pesada."
+      },
+      {
+        name: "LIMPIADOR SOME BY ME AHA BHA PHA",
+        category: "Limpiador",
+        stock: "1",
+        price: 19,
+        image: "LIMPIADOR SOME BY ME AHA BHA PHA.png",
+        description: "Limpiador espumoso para piel con tendencia a granitos o poros obstruidos. Combina exfoliación suave y limpieza profunda para dejar el rostro fresco, limpio y con sensación renovada."
+      },
+      {
+        name: "SERUM NINELESS 10% NIACINAMIDE",
+        category: "Sérum",
+        stock: "1",
+        price: 18,
+        image: "SERUM NINELESS 10% NIACINAMIDE.png",
+        description: "Sérum iluminador con 10% de niacinamida para una piel más uniforme, suave y con apariencia de poros más refinados. Un básico perfecto para potenciar el glow diario."
+      },
+      {
+        name: "TONICO APRILSKIN PURITY TXA",
+        category: "Tónico",
+        stock: "2",
+        price: 22,
+        image: "TONICO APRILSKIN PURITY TXA.png",
+        description: "Tónico lechoso para piel apagada o con tono desigual. Hidrata, deja una sensación suave y ayuda a que la piel luzca más radiante, fresca y con efecto glass skin."
+      },
+      {
+        name: "SKIN1004 LIMPIADOR CENTELLA AMPOULE",
+        category: "Limpiador",
+        stock: "1",
+        price: 20,
+        image: "SKIN1004 LIMPIADOR CENTELLA AMPOULE.png",
+        description: "Limpiador con centella de Madagascar que limpia impurezas y ayuda a calmar la piel. Ideal para una limpieza diaria suave, fresca y con acabado confortable."
+      },
+      {
+        name: "SKIN1004 TONE BRIGHTENING",
+        category: "Sérum",
+        stock: "1",
+        price: 26,
+        image: "SKIN1004 TONE BRIGHTENING.png",
+        description: "Ampolla iluminadora con cápsulas que se funden en la piel para aportar glow y ayudar a mejorar el tono desigual. Ligera, fresca y perfecta para una rutina de piel luminosa."
+      }
+    ];
+
+    let products = [...fallbackProducts];
+
+    const isAdminMode = new URLSearchParams(window.location.search).get("admin") === "1" || window.location.hash === "#admin";
+    document.body.classList.toggle("admin-mode", isAdminMode);
+
+    const productGrid = document.getElementById("productGrid");
+    const searchInput = document.getElementById("searchInput");
+    const categorySelect = document.getElementById("categorySelect");
+    const totalProducts = document.getElementById("totalProducts");
+    const availableProducts = document.getElementById("availableProducts");
+    const sheetStatus = document.getElementById("sheetStatus");
+
+    const fallbackSvg = "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Crect width='600' height='600' fill='%23FFF8EF'/%3E%3Ccircle cx='300' cy='260' r='118' fill='%23BFEFEA' opacity='0.75'/%3E%3Ctext x='300' y='325' text-anchor='middle' font-family='Arial' font-size='34' fill='%23073F4A' font-weight='700'%3ECYAN GLOW%3C/text%3E%3Ctext x='300' y='370' text-anchor='middle' font-family='Arial' font-size='18' fill='%23667A7D'%3EImagen no encontrada%3C/text%3E%3C/svg%3E";
+
+    function buildWhatsAppLink(message) {
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    }
+
+    function escapeHtml(value) {
+      return (value === undefined || value === null ? "" : value)
+        .toString()
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function escapeAttribute(value) {
+      return escapeHtml(value).replace(/`/g, "&#096;");
+    }
+
+    const normalizeText = (text) => (text === undefined || text === null ? "" : text)
+      .toString()
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+
+    const normalizeKey = (text) => normalizeText(text).replace(/[^a-z0-9]/g, "");
+
+    const getImageSrc = (fileName) => {
+      if (!fileName) return fallbackSvg;
+      const cleanFileName = fileName.toString().trim();
+
+      if (
+        cleanFileName.startsWith("http://") ||
+        cleanFileName.startsWith("https://") ||
+        cleanFileName.startsWith("data:") ||
+        cleanFileName.startsWith("file://")
+      ) {
+        return cleanFileName;
+      }
+
+      return IMAGE_BASE + cleanFileName
+        .split("/")
+        .map((part) => encodeURIComponent(part))
+        .join("/");
+    };
+
+    const formatPrice = (value) => new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      minimumFractionDigits: 2
+    }).format(Number(value) || 0);
+
+    function parsePrice(value) {
+      if (value === undefined || value === null) return 0;
+      const cleanValue = value.toString().replace(/[^0-9.,-]/g, "").replace(",", ".");
+      return Number(cleanValue) || 0;
+    }
+
+    function parseCSV(text) {
+      const rows = [];
+      let row = [];
+      let value = "";
+      let insideQuotes = false;
+
+      for (let i = 0; i < text.length; i += 1) {
+        const char = text[i];
+        const nextChar = text[i + 1];
+
+        if (char === '"' && insideQuotes && nextChar === '"') {
+          value += '"';
+          i += 1;
+        } else if (char === '"') {
+          insideQuotes = !insideQuotes;
+        } else if (char === "," && !insideQuotes) {
+          row.push(value.trim());
+          value = "";
+        } else if ((char === "\n" || char === "\r") && !insideQuotes) {
+          if (char === "\r" && nextChar === "\n") i += 1;
+          row.push(value.trim());
+          rows.push(row);
+          row = [];
+          value = "";
+        } else {
+          value += char;
+        }
+      }
+
+      if (value || row.length) {
+        row.push(value.trim());
+        rows.push(row);
+      }
+
+      return rows.filter((items) => items.some((item) => item !== ""));
+    }
+
+    function getHeaderScore(headers) {
+      const expectedHeaders = [
+        "id",
+        "producto",
+        "nombre",
+        "nombreproducto",
+        "categoria",
+        "stock",
+        "precio",
+        "preciousd",
+        "precioventa",
+        "imagen",
+        "foto",
+        "descripcion",
+        "activo",
+        "estado"
+      ];
+
+      return headers.reduce((score, header) => {
+        const normalizedHeader = normalizeKey(header);
+        return score + (expectedHeaders.includes(normalizedHeader) ? 1 : 0);
+      }, 0);
+    }
+
+    function rowsToObjects(rows) {
+      if (!rows.length) return [];
+
+      let headerIndex = 0;
+      let bestScore = -1;
+
+      rows.forEach((row, index) => {
+        const score = getHeaderScore(row);
+        if (score > bestScore) {
+          bestScore = score;
+          headerIndex = index;
+        }
+      });
+
+      if (bestScore < 3) return [];
+
+      const headers = rows[headerIndex].map((header, index) => normalizeKey(header || `columna ${index + 1}`));
+
+      return rows.slice(headerIndex + 1).map((row) => {
+        const item = {};
+        headers.forEach((header, index) => {
+          item[header] = row[index] === undefined || row[index] === null ? "" : row[index];
+        });
+        return item;
+      });
+    }
+
+    function csvToObjects(csvText) {
+      return rowsToObjects(parseCSV(csvText));
+    }
+
+    function gvizResponseToObjects(response) {
+      const table = response && response.table;
+      if (!table || !Array.isArray(table.cols) || !Array.isArray(table.rows)) return [];
+
+      const columnLabels = table.cols.map((column, index) => column.label || column.id || `columna ${index + 1}`);
+      const dataRows = table.rows.map((row) => table.cols.map((_, index) => {
+        const cell = row.c && row.c[index];
+        if (!cell) return "";
+        return cell.f !== undefined && cell.f !== null ? cell.f : cell.v;
+      }));
+
+      if (getHeaderScore(columnLabels) >= 3) {
+        return dataRows.map((row) => {
+          const item = {};
+          columnLabels.forEach((header, index) => {
+            item[normalizeKey(header)] = row[index] === undefined || row[index] === null ? "" : row[index];
+          });
+          return item;
+        });
+      }
+
+      return rowsToObjects(dataRows);
+    }
+
+    function getField(row, possibleNames) {
+      for (const name of possibleNames) {
+        const key = normalizeKey(name);
+        if (row[key] !== undefined && row[key] !== "") return row[key];
+      }
+      return "";
+    }
+
+    function isActiveProduct(value) {
+      const activeValue = normalizeText(value || "si").trim();
+      return !["no", "false", "falso", "0", "inactivo", "inactive"].includes(activeValue);
+    }
+
+    function mapSheetRowToProduct(row) {
+      const name = getField(row, ["Nombre", "Producto", "Nombre producto", "Producto nombre", "Product", "Name"]);
+      const category = getField(row, ["Categoría", "Categoria", "Category"]);
+      const stock = getField(row, ["Stock", "Existencias", "Inventario"]);
+      const price = getField(row, ["Precio", "Precio USD", "Precio venta", "Price", "Valor"]);
+      const image = getField(row, ["Imagen", "Image", "Foto", "Archivo imagen"]);
+      const description = getField(row, ["Descripción", "Descripcion", "Description"]);
+      const active = getField(row, ["Activo", "Active", "Estado"]);
+
+      if (!name || !isActiveProduct(active)) return null;
+
+      return {
+        name,
+        category: category || "Sin categoría",
+        stock: stock || "No especificado",
+        price: parsePrice(price),
+        image,
+        description: description || "Producto de skincare coreano seleccionado por CYAN GLOW."
+      };
+    }
+
+    function getStockLabel(stock) {
+      if (stock === undefined || stock === null || stock.toString().trim() === "" || stock === "No especificado") {
+        return "Stock consultar";
+      }
+
+      const numericStock = Number(stock);
+      if (Number.isNaN(numericStock)) return `Stock ${stock}`;
+      if (numericStock <= 0) return "Sin stock";
+      if (numericStock === 1) return "Última unidad";
+      return `Stock ${numericStock}`;
+    }
+
+    function updateStats() {
+      totalProducts.textContent = products.length;
+      availableProducts.textContent = products.filter((product) => Number(product.stock) > 0).length;
+    }
+
+    function renderProducts() {
+      const searchTerm = normalizeText(searchInput.value.trim());
+      const selectedCategory = categorySelect.value;
+
+      const filteredProducts = products.filter((product) => {
+        const productText = normalizeText(`${product.name} ${product.category} ${product.description}`);
+        const matchesSearch = productText.includes(searchTerm);
+        const matchesCategory = selectedCategory === "Todos" || product.category === selectedCategory;
+        return matchesSearch && matchesCategory;
+      });
+
+      productGrid.innerHTML = "";
+
+      if (filteredProducts.length === 0) {
+        productGrid.innerHTML = `
+          <div class="empty-state">
+            <strong>No encontré productos con ese filtro.</strong><br />
+            Prueba buscando por marca, activo o categoría.
+          </div>
+        `;
+        return;
+      }
+
+      const fragment = document.createDocumentFragment();
+
+      filteredProducts.forEach((product) => {
+        const card = document.createElement("article");
+        card.className = "product-card";
+
+        const productName = escapeHtml(product.name);
+        const productCategory = escapeHtml(product.category);
+        const productDescription = escapeHtml(product.description);
+        const imageSrc = escapeAttribute(getImageSrc(product.image));
+        const productMessage = `Hola, quiero recibir una asesoría gratuita de CYAN GLOW. Me interesa el producto: ${product.name}. ¿Me ayudas con disponibilidad y cómo usarlo?`;
+
+        card.innerHTML = `
+          <div class="product-image-wrap">
+            <span class="badge">${productCategory}</span>
+            <img
+              class="product-image"
+              src="${imageSrc}"
+              alt="${productName}"
+              loading="lazy"
+              onerror="this.onerror=null; this.src='${fallbackSvg}';"
+            />
+          </div>
+          <div class="card-content">
+            <p class="product-category">${productCategory}</p>
+            <h3 class="product-name">${productName}</h3>
+            <p class="product-description">${productDescription}</p>
+            <div class="card-footer">
+              <div class="product-meta">
+                <div class="price-box">
+                  <strong>${formatPrice(product.price)}</strong>
+                  <span>Precio venta</span>
+                </div>
+                <span class="stock-chip">${getStockLabel(product.stock)}</span>
+              </div>
+              <a class="btn btn-primary product-whatsapp" href="${buildWhatsAppLink(productMessage)}" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+            </div>
+          </div>
+        `;
+
+        fragment.appendChild(card);
+      });
+
+      productGrid.appendChild(fragment);
+    }
+
+    function setSheetStatus(message, type = "") {
+      if (!sheetStatus) return;
+      sheetStatus.textContent = message;
+      sheetStatus.className = `sheet-status ${type}`.trim();
+    }
+
+    function looksLikeCsv(text) {
+      const cleanText = text.trim().toLowerCase();
+      if (!cleanText) return false;
+      if (cleanText.startsWith("<!doctype") || cleanText.startsWith("<html") || cleanText.includes("service login")) return false;
+      return text.includes(",") || text.includes(";") || text.includes("\n");
+    }
+
+    function loadProductsWithJsonp() {
+      return new Promise((resolve, reject) => {
+        const callbackName = `cyanGlowSheetCallback_${Date.now()}_${Math.random().toString(36).slice(2)}`;
+        const script = document.createElement("script");
+        const timeout = window.setTimeout(() => {
+          cleanup();
+          reject(new Error("Google Sheets tardó demasiado en responder."));
+        }, 12000);
+
+        function cleanup() {
+          window.clearTimeout(timeout);
+          delete window[callbackName];
+          if (script.parentNode) script.parentNode.removeChild(script);
+        }
+
+        window[callbackName] = (response) => {
+          cleanup();
+
+          if (!response || response.status === "error") {
+            const errorMessage = response && response.errors && response.errors[0]
+              ? response.errors[0].detailed_message || response.errors[0].reason
+              : "Google Sheets no devolvió datos válidos.";
+            reject(new Error(errorMessage));
+            return;
+          }
+
+          resolve(response);
+        };
+
+        script.onerror = () => {
+          cleanup();
+          reject(new Error("No se pudo conectar con Google Sheets."));
+        };
+
+        script.src = `${SHEET_JSONP_BASE_URL}&tqx=responseHandler:${callbackName}&cache=${Date.now()}`;
+        document.body.appendChild(script);
+      });
+    }
+
+    async function loadProductsWithCsvFallback() {
+      const cacheBuster = `${SHEET_CSV_URL}${SHEET_CSV_URL.includes("?") ? "&" : "?"}cache=${Date.now()}`;
+      const response = await fetch(cacheBuster, { cache: "no-store" });
+      if (!response.ok) throw new Error(`Respuesta ${response.status}`);
+
+      const csvText = await response.text();
+      if (!looksLikeCsv(csvText)) throw new Error("Google no devolvió un CSV válido.");
+      return csvToObjects(csvText);
+    }
+
+    async function loadProductsFromGoogleSheet(showConnecting = true) {
+      if (showConnecting) setSheetStatus("Conectando con Google Sheets...");
+
+      const errors = [];
+      let sheetRows = [];
+
+      try {
+        const response = await loadProductsWithJsonp();
+        sheetRows = gvizResponseToObjects(response);
+      } catch (error) {
+        errors.push(`JSONP: ${error.message}`);
+        console.warn("No se pudo cargar Google Sheets con JSONP:", error);
+      }
+
+      if (!sheetRows.length) {
+        try {
+          sheetRows = await loadProductsWithCsvFallback();
+        } catch (error) {
+          errors.push(`CSV: ${error.message}`);
+          console.warn("No se pudo cargar Google Sheets como CSV:", error);
+        }
+      }
+
+      const sheetProducts = sheetRows
+        .map(mapSheetRowToProduct)
+        .filter(Boolean);
+
+      if (sheetProducts.length) {
+        products = sheetProducts;
+        console.info("Productos cargados desde Google Sheets:", products.length);
+        setSheetStatus(`Conectado a Google Sheets. Productos cargados: ${products.length}.`, "success");
+        updateStats();
+        renderProducts();
+        return;
+      }
+
+      products = [...fallbackProducts];
+      setSheetStatus(
+        "No se pudo leer Google Sheets. Estoy mostrando el catálogo de respaldo del HTML. Revisa que la hoja se llame Productos, que tenga encabezados Producto/Categoría/Stock/Precio USD/Imagen/Descripción/Activo y que el archivo esté compartido como 'Cualquier persona con el enlace puede ver'.",
+        "warning"
+      );
+      console.warn("Errores al cargar Google Sheets:", errors);
+      updateStats();
+      renderProducts();
+    }
+
+    const navAdvice = document.querySelector(".nav-whatsapp");
+    if (navAdvice) navAdvice.href = buildWhatsAppLink(GENERAL_ADVICE_MESSAGE);
+
+    document.querySelectorAll("[data-whatsapp-advice]").forEach((link) => {
+      link.href = buildWhatsAppLink(GENERAL_ADVICE_MESSAGE);
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+    searchInput.addEventListener("input", renderProducts);
+    categorySelect.addEventListener("change", renderProducts);
+
+    updateStats();
+    renderProducts();
+    loadProductsFromGoogleSheet();
+    window.setInterval(() => loadProductsFromGoogleSheet(false), 60000);
+  </script>
+</body>
+</html>
