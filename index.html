@@ -1440,7 +1440,7 @@
           <div class="featured-chip">Producto estrella</div>
           <img src="./PROTECTOR%20SOLAR%20SKIN1004%20HYALU%20CICA.png" alt="Protector solar SKIN1004 Hyalu Cica" />
           <strong>Protector Solar SKIN1004 Hyalu Cica</strong>
-          <span class="floating-price">$23.00</span>
+          <span class="floating-price" id="featuredProductPrice">$19.00</span>
         </article>
 
       </div>
@@ -1778,7 +1778,7 @@
         name: "PROTECTOR SOLAR SKIN1004 HYALU CICA",
         category: "Protector solar",
         stock: "1",
-        price: 23,
+        price: 19,
         image: "PROTECTOR SOLAR SKIN1004 HYALU CICA.png",
         favorite: true,
         description: "Protector solar acuoso con sensación de sérum: hidrata, calma y deja un acabado de piel saludable. Perfecto para quienes buscan SPF alto, ligero y cómodo para todos los días."
@@ -1877,6 +1877,8 @@
     const availableProducts = document.getElementById("availableProducts");
     const favoriteProducts = document.getElementById("favoriteProducts");
     const sheetStatus = document.getElementById("sheetStatus");
+    const featuredProductPrice = document.getElementById("featuredProductPrice");
+    const FEATURED_PRODUCT_MATCH = "skin1004hyalucica";
     const cartButton = document.getElementById("cartButton");
     const cartCount = document.getElementById("cartCount");
     const cartPanel = document.getElementById("cartPanel");
@@ -2217,6 +2219,19 @@ Total aproximado: ${formatPrice(total)}
     }
 
 
+    function updateFeaturedProductPrice() {
+      if (!featuredProductPrice) return;
+
+      const featuredProduct = products.find((product) => {
+        const productKey = normalizeKey(product.name);
+        return productKey.includes(FEATURED_PRODUCT_MATCH) || FEATURED_PRODUCT_MATCH.includes(productKey);
+      });
+
+      if (featuredProduct) {
+        featuredProductPrice.textContent = formatPrice(featuredProduct.price);
+      }
+    }
+
     function updateStats() {
       totalProducts.textContent = products.length;
       availableProducts.textContent = products.filter((product) => Number(product.stock) > 0).length;
@@ -2386,6 +2401,7 @@ Total aproximado: ${formatPrice(total)}
         products = sheetProducts;
         console.info("Productos cargados desde Google Sheets:", products.length);
         setSheetStatus(`Conectado a Google Sheets. Productos cargados: ${products.length}.`, "success");
+        updateFeaturedProductPrice();
         updateStats();
         renderProducts();
         return;
@@ -2397,6 +2413,7 @@ Total aproximado: ${formatPrice(total)}
         "warning"
       );
       console.warn("Errores al cargar Google Sheets:", errors);
+      updateFeaturedProductPrice();
       updateStats();
       renderProducts();
     }
@@ -2441,6 +2458,7 @@ Total aproximado: ${formatPrice(total)}
     searchInput.addEventListener("input", renderProducts);
     categorySelect.addEventListener("change", renderProducts);
 
+    updateFeaturedProductPrice();
     updateStats();
     renderProducts();
     loadProductsFromGoogleSheet();
