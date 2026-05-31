@@ -926,10 +926,7 @@
     }
 
     .product-description {
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
+      overflow: visible;
     }
 
     .card-footer {
@@ -2219,6 +2216,13 @@ Total aproximado: ${formatPrice(total)}
     }
 
 
+    function truncateText(value, maxLength = 150) {
+      const text = value === undefined || value === null ? "" : value.toString().trim();
+      const characters = Array.from(text);
+      if (characters.length <= maxLength) return text;
+      return `${characters.slice(0, maxLength - 1).join("").trimEnd()}…`;
+    }
+
     function updateFeaturedProductPrice() {
       if (!featuredProductPrice) return;
 
@@ -2270,7 +2274,9 @@ Total aproximado: ${formatPrice(total)}
 
         const productName = escapeHtml(product.name);
         const productCategory = escapeHtml(product.category);
-        const productDescription = escapeHtml(product.description);
+        const fullProductDescription = product.description === undefined || product.description === null ? "" : product.description.toString();
+        const productDescription = escapeHtml(truncateText(fullProductDescription, 150));
+        const productDescriptionTitle = escapeAttribute(fullProductDescription);
         const imageSrc = escapeAttribute(getImageSrc(product.image));
         const productKey = escapeAttribute(getCartKey(product));
 
@@ -2288,7 +2294,7 @@ Total aproximado: ${formatPrice(total)}
           <div class="card-content">
             <p class="product-category">${productCategory}</p>
             <h3 class="product-name">${productName}</h3>
-            <p class="product-description">${productDescription}</p>
+            <p class="product-description" title="${productDescriptionTitle}">${productDescription}</p>
             <div class="card-footer">
               <div class="product-meta">
                 <div class="price-box">
