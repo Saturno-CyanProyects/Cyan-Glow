@@ -1390,6 +1390,18 @@
         padding: 54px 0;
       }
     }
+
+    /* Descripción: máximo 150 caracteres por JavaScript, sin límite visual de líneas. */
+    .product-description {
+      display: block !important;
+      -webkit-line-clamp: unset !important;
+      -webkit-box-orient: initial !important;
+      overflow: visible !important;
+      max-height: none !important;
+      min-height: 0 !important;
+      white-space: normal !important;
+    }
+
   </style>
 </head>
 <body>
